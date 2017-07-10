@@ -6,12 +6,12 @@ print ("""
 ###################################################
 """)
 while(True):
-        encoder = input("Encoder e, decoder d, çıkış c : ")
-        if encoder == 'e':
+        karakter = input("Encoder e, decoder d, çıkış c : ")
+        if karakter == 'e':
                 encod = input("Lütfen encod edilecek veriyi girin : ")
                 encoded = hashlib.md5(encod.encode("utf-8"))
                 print("Encod Edilmiş Hali : " , encoded.hexdigest())
-        elif encoder == 'd':
+        elif karakter == 'd':
                 decod = input("Lütfen decod edilecek hash değerini girin : ")
                 wordlist = open ("md5wordlist.txt", "r").readlines() #md5wordlist.txt isminde dosyanız olmalıdır.
                 for kelime in wordlist:  #md5wordlist.txt dosyanız programla aynı dizinde yer almalıdır.
@@ -19,7 +19,7 @@ while(True):
                     kir = hashlib.md5(kelime).hexdigest()
                     if kir == decod:
                         print("Decod Edilmiş Hali : ", decod)
-        elif encoder == 'c':
+        elif karakter == 'c':
             quit()
         else:
             print("Yanlış karakter girdiniz lütfen kontrol edin!")
